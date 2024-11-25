@@ -61,9 +61,7 @@ def build_cnn():
     model1 = Sequential([
         Input(shape=(28, 28, 1)),
         Conv2D(50, kernel_size=(4, 4), activation='relu'),
-        MaxPooling2D(pool_size=(3, 3)),
         Conv2D(100, kernel_size=(4, 4), activation='relu'),
-        MaxPooling2D(pool_size=(3, 3)),
         Conv2D(200, kernel_size=(4, 4), activation='relu'),
         MaxPooling2D(pool_size=(3, 3)),
         Flatten(),
