@@ -27,9 +27,6 @@ def load_mnist_data(i_filepath, l_filepath):
     df = pd.DataFrame(images)
     df["label"] = labels
 
-    print('Data after loading:')
-    print(df.head())
-
     # Normalize the pixel values
     df.iloc[:, :-1] = df.iloc[:, :-1].astype('float32') / 255.0
     one_hot_labels = pd.get_dummies(df['label'], prefix='digit')
