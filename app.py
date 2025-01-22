@@ -19,7 +19,7 @@ async def post_picture(picture: UploadFile = File(...)):
         image_array = image_array.reshape(1, 28, 28, 1)
 
         prediction = [model.predict(image_array) for model in models]
-        prediction_digit = [np.argmax(pred) for pred in prediction]
+        prediction_digit = [int(np.argmax(pred)) for pred in prediction]
 
         return {'digit': prediction_digit}
 
